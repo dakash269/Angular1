@@ -1,0 +1,6 @@
+[debug] Copy resource mappings: 
+[debug] 	(/home/akash/Pictures/finale/conf/evolutions,/home/akash/Pictures/finale/target/scala-2.11/classes/evolutions)
+[debug] 	(/home/akash/Pictures/finale/conf/routes,/home/akash/Pictures/finale/target/scala-2.11/classes/routes)
+[debug] 	(/home/akash/Pictures/finale/conf/application.conf,/home/akash/Pictures/finale/target/scala-2.11/classes/application.conf)
+[debug] 	(/home/akash/Pictures/finale/conf/evolutions/default,/home/akash/Pictures/finale/target/scala-2.11/classes/evolutions/default)
+[debug] 	(/home/akash/Pictures/finale/conf/evolutions/default/1.sql,/home/akash/Pictures/finale/target/scala-2.11/classes/evolutions/default/1.sql)

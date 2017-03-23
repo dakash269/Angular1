@@ -1,0 +1,107 @@
+@(title: String)
+
+<!DOCTYPE html>
+<html><head>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/Archive.css")">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/start.css")">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/note2.css")">
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-3.1.1.min.js")"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="@routes.Assets.at("font-awesome/css/font-awesome.min.css")">
+  <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("bootstrap/css/bootstrap.min.css")">
+  <script src="@routes.Assets.at("bootstrap/js/bootstrap.js")" type="text/javascript"></script>
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/angular.min.js")"></script>
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/moment.js")"></script>
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/bootstrap-datetimepicker.min.js")"></script>
+  <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/bootstrap-datetimepicker.min.css")">
+
+  <style>body{background-color:#e8e8e8;}</style>
+</head>
+<body>
+
+    <div id="top"></div>
+
+    <div class="container"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></div>
+
+
+    <div id="search"><input type="text" name="search" class="col-sm-6" placeholder="Search" autocomplete="off"><br/></div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active padright"><a class="signout" href="@routes.HomeController.logout()">Signout</a></li>
+    </ul>
+
+    <div class="glyphicon glyphicon-bell"></div><br/><br/><br/><br/><br/>
+
+    <div id="Archive"><h3>Archive</h3></div>
+      <div id="myId1" ng-app="archive1"  ng-controller="archiveController">
+          <div class="padTopMore col-md-12" ng-cloak>
+              <div class="row rowWithFullWidth col-md-12">
+                  <div id="items" class="no-padding col-md-10 col-md-offset-2">
+                      <div ng-repeat="post in posts">
+                          <div class="col-md-3 eachCard" >
+                              <div class="card" ng-clock>
+                                  <input ng-model="id" name="id" ng-value="post.id" type="hidden">
+                                  <div class="clickd">
+                                      <div name="title" class="title wordWrap" contenteditable="false" ng-cloak>{{ post.title}}</div>
+                                      <div name="content" class="content wordWrap" contenteditable="false" ng-cloak>{{ post.content}}</div>
+                                      <div name="reminder" class="remind" contenteditable="false"><div class="remindText" ng-cloak>{{post.reminder}}</div></div>
+                                  </div>
+                                  <div class="toolbar">
+                                      <div class="inner col-md-offset-2">
+                                          <div class="col-md-3"><a ng-click="delA(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash fa-lg" aria-hidden="true"></i></a></div>
+                                          <div class="col-md-3"><a ng-click="unarchive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Unarchive Note"  class="glyphicon glyphicon-inbox" aria-hidden="true"></i></a></div>
+                                      </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <script src="@routes.Assets.at("/javascripts/controllers/MainController.js")"></script>
+    <div class="gly">
+
+      <ul><li><div class="glyphicon glyphicon-pencil">      &emsp;<a href="@routes.HomeController.note"id="notes">Notes</a></div></li><br/>
+        <li><div class="glyphicon glyphicon-alert">       &emsp;<a href="@routes.HomeController.Reminder" id="reminder">Reminders</a></div></li><br/></ul>
+
+      <hr style="border: 0.5px solid #918f8f" width="118%">
+
+      <ul>Lables &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&emsp;&emsp;&emsp; EDIT<br/><br/><br/>
+        <li><div class="glyphicon glyphicon-plus">       &emsp;Create new</div></li><br/></ul>
+
+      <hr style="border: 0.5px solid #918f8f" width="118%">
+
+      <ul><li><div class="glyphicon glyphicon-cloud-download">      &emsp;Archive</div></li><br>
+        <li><div class="glyphicon glyphicon-trash">       &emsp;<a href="@routes.HomeController.Trash" id="trash">Trash</a></div></li><br/></ul>
+
+      <hr style="border: 0.5px solid #918f8f" width="118%">
+
+      <ul><li><div class="glyphicon glyphicon-cog">         &emsp;Settings</div></li><br/>
+        <li><div class="glyphicon glyphicon-question-sign">         &emsp;Help</div></li><br/></ul></div>
+
+    <div class="img"></div>
+    <div class="imgtxt">&emsp;&emsp;Your archived notes appear here</div>
+    <div class="scrollbar" id="style1"><div class="force-overflow"></div></div>
+    <script>$(window).scroll(
+            {
+                previousTop: 0
+            },
+            function () {
+                var currentTop = $(window).scrollTop();
+                if (currentTop < this.previousTop) {
+                    $(".sidebar em").text("Up");
+                    $("#top").show();
+                } else {
+                    $(".sidebar em").text("Down");
+                    $("#top").hide();
+                }
+                this.previousTop = currentTop;
+            });</script>
+  </body></html>

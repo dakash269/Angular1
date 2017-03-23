@@ -1,0 +1,7 @@
+2017-03-22 13:39:15,066 [WARN] from application in main - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-03-22 13:39:15,863 [INFO] from application in main - Creating Pool for datasource 'default'
+2017-03-22 13:39:16,370 [INFO] from play.api.db.DefaultDBApi in main - Database [default] connected at jdbc:mysql://localhost/keep
+2017-03-22 13:39:16,579 [WARN] from application in main - application.langs is deprecated, use play.i18n.langs instead
+2017-03-22 13:39:19,283 [WARN] from application in main - application.conf @ file:/home/akash/Videos/Movies/finale/target/universal/stage/conf/application.conf: 7: application.secret is deprecated, use play.crypto.secret instead
+2017-03-22 13:39:19,293 [INFO] from play.api.Play in main - Application started (Prod)
+2017-03-22 13:39:19,462 [ERROR] from play.core.server.NettyServer in main - Failed to listen for HTTP on /0.0.0.0:9000!

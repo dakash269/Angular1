@@ -1,0 +1,6 @@
+2017-03-23 19:18:26,372 [INFO] from play.core.server.NettyServer in pool-4-thread-5 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2017-03-23 19:18:29,441 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2017-03-23 19:18:30,639 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2017-03-23 19:18:30,961 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:mysql://localhost/keep
+2017-03-23 19:18:32,069 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2017-03-23 19:18:32,178 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.conf @ file:/home/akash/Pictures/finale/target/scala-2.11/classes/application.conf: 7: application.secret is deprecated, use play.crypto.secret instead
